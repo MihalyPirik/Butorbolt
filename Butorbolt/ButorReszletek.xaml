@@ -1,0 +1,37 @@
+﻿<Window x:Class="Butorbolt.ButorReszletek"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Butorbolt"
+        mc:Ignorable="d"
+        Title="ButorReszletek" Height="350" Width="500" FontSize="18" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Megnevezés:" Margin="5" Width="150"/>
+                <TextBox x:Name="megnevezesTXB" Width="300" Margin="5" Text="{Binding megnevezes}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Alapanyag:" Margin="5" Width="150"/>
+                <ComboBox x:Name="alapanyagCBX" Margin="5" Width="300" SelectedValue="{Binding alapanyag_id}" DisplayMemberPath="megnevezes" SelectedValuePath="id"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Szállítás:" Margin="5" Width="150"/>
+                <DatePicker Margin="5" Width="300" SelectedDate="{Binding szallitas}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Ár:" Margin="5" Width="150"/>
+                <TextBox Margin="5" Width="150" Text="{Binding ar}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Szín:" Margin="5" Width="150"/>
+                <TextBox Margin="5" Width="150" Text="{Binding szin}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="OK" Margin="10" Padding="5" Width="150" Click="OkBtn_Click"/>
+                <Button Content="Mégse" Margin="10" Padding="5" Width="150" Click="Megse_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
